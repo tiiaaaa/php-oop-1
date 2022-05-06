@@ -45,6 +45,14 @@ class Movie{
     <title>PHP OOP 1</title>
 </head>
 <body>
-    
+    <div>
+        <p>
+            <?php 
+            $ciao = new Movie('Batman', 'https://www.cinematografo.it/wp-content/uploads/2022/01/batman.jpg' , 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum ut recusandae quidem libero sint voluptates cupiditate', 'action', '2h:30');
+
+            var_dump($ciao)
+            ?>
+        </p>
+    </div>
 </body>
 </html>
