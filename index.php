@@ -1,5 +1,7 @@
 <?php
-// Dichiarata la classe con le sue variabili
+/**
+ * Classe del singolo Movie
+ */
 class Movie{
     public $title;
     public $poster;
@@ -7,13 +9,21 @@ class Movie{
     public $genre;
     public $timeLenght;
 
-    // Creato un costruttore
+    /**
+     * Costruttore del singolo Movie
+     * @param $title of the created Movie
+     * @param $poster of the created Movie
+     * @param $description of the created Movie
+     * @param $genre of the created Movie
+     * @param $timeLenght of the created Movie
+     * 
+     */
     function __construct($_title, $_poster, $_description, $_genre, $_timeLenght){
             $this -> title = $_title;
             $this -> poster = $_poster;
             $this -> description = $_description;
             $this -> genre = $_genre;
-            $this -> timeLenght = $_timeLenght
+            $this -> timeLenght = $_timeLenght;
     }
 }
 
