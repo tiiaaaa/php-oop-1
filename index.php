@@ -7,7 +7,7 @@ class Movie{
     public $poster;
     public $description;
     public $genre;
-    public $timeLenght;
+    protected $timeLenght;
 
     /**
      * Costruttore del singolo Movie
@@ -23,13 +23,19 @@ class Movie{
             $this -> poster = $_poster;
             $this -> description = $_description;
             $this -> genre = $_genre;
-            $this -> timeLenght = $_timeLenght;
+            $this -> setTimeLenght($_timeLenght);
     }
 
 
     public function setTitle($_title){
-        if(is_string($_title) && $_title =! null){
+        if(is_string($_title) && $_title != null && !strlen($_title) == 0){
             $this -> title = $_title;
+        }
+    }
+
+    public function setTimeLenght($_timeLenght){
+        if(is_string($_timeLenght) && $_timeLenght != null && strlen($_timeLenght) >= 4 && strlen($_timeLenght) != 0){
+            $this -> timeLenght = $_timeLenght;
         }
     }
 }
@@ -48,7 +54,7 @@ class Movie{
     <div>
         <p>
             <?php 
-            $ciao = new Movie('Batman', 'https://www.cinematografo.it/wp-content/uploads/2022/01/batman.jpg' , 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum ut recusandae quidem libero sint voluptates cupiditate', 'action', '2h:30');
+            $ciao = new Movie( 'Batman' , 'https://www.cinematografo.it/wp-content/uploads/2022/01/batman.jpg' , 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum ut recusandae quidem libero sint voluptates cupiditate', 'action', '2h:30m');
 
             var_dump($ciao)
             ?>
